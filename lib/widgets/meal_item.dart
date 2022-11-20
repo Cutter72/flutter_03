@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_03/screens/meal_detail_screen.dart';
 
 import '../models/meal.dart';
 
@@ -13,7 +14,7 @@ class MealItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => showRecipe(),
+      onTap: () => showRecipe(context),
       child: Card(
         margin: const EdgeInsets.all(10),
         elevation: 4,
@@ -95,5 +96,7 @@ class MealItem extends StatelessWidget {
     );
   }
 
-  showRecipe() {}
+  showRecipe(BuildContext context) {
+    Navigator.of(context).pushNamed(MealDetailScreen.routeName, arguments: meal);
+  }
 }
