@@ -45,6 +45,7 @@ class MyApp extends StatelessWidget {
         }
         return MaterialPageRoute(builder: (bContext) => CategoriesScreen());
       },
+      onUnknownRoute: (ctx) => MaterialPageRoute(builder: (bContext) => CategoriesScreen()),
     );
   }
 }
