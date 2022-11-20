@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_03/models/category.dart';
-import 'package:flutter_03/screens/category_meals_screen.dart';
+
+import '../screens/category_meals_screen.dart';
 
 ///
 /// @author Paweł Drelich <drelich_pawel@o2.pl>
@@ -34,8 +35,9 @@ class CategoryItem extends StatelessWidget {
   }
 
   goTo(BuildContext context) {
-    Navigator.of(context).push(MaterialPageRoute(
-      builder: (_) => CategoryMealsScreen(category: category),
-    ));
+    // Navigator.of(context).push(MaterialPageRoute(
+    //   builder: (_) => CategoryMealsScreen(category: category),
+    // ));
+    Navigator.of(context).pushNamed(CategoryMealsScreen.routeName, arguments: category);
   }
 }

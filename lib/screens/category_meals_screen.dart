@@ -6,12 +6,15 @@ import '../models/category.dart';
 /// @author Paweł Drelich <drelich_pawel@o2.pl>
 ///
 class CategoryMealsScreen extends StatelessWidget {
-  final Category category;
+  static const routeName = "/category-meals";
 
-  const CategoryMealsScreen({Key? key, required this.category}) : super(key: key);
+  // final Category category;
+  //
+  // const CategoryMealsScreen({Key? key, required this.category}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final category = ModalRoute.of(context)?.settings.arguments as Category;
     return Scaffold(
       // Scaffold must be the root for screens
       appBar: AppBar(
