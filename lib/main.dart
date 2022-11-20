@@ -14,8 +14,18 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter 03',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+          primarySwatch: Colors.pink,
+          colorScheme: ColorScheme.fromSwatch().copyWith(
+            secondary: Colors.amber,
+          ),
+          canvasColor: const Color.fromARGB(255, 255, 254, 229),
+          fontFamily: 'Raleway',
+          textTheme: ThemeData.light().textTheme.copyWith(
+                  headline6: const TextStyle(
+                fontSize: 18,
+                fontFamily: 'RobotoCondensed',
+                fontWeight: FontWeight.bold,
+              ))),
       home: const CategoriesScreen(),
     );
   }

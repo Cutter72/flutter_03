@@ -14,12 +14,16 @@ class CategoryItem extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(15),
       decoration: BoxDecoration(
+          borderRadius: const BorderRadius.all(Radius.circular(8)),
           gradient: LinearGradient(
-        colors: [color.withOpacity(0.7), color],
-        begin: Alignment.topLeft,
-        end: Alignment.bottomRight,
-      )),
-      child: Text(title),
+            colors: [color.withOpacity(0.7), color],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          )),
+      child: Text(
+        title,
+        style: Theme.of(context).textTheme.headline6,
+      ),
     );
   }
 }
