@@ -20,9 +20,9 @@ class CategoryMealsScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text(category.title),
       ),
-      body: const Center(
-          child: Text(
-              "THe recipes of the category")), // This trailing comma makes auto-formatting nicer for build methods.
+      body: ListView.builder(itemBuilder: (bContext, index) {
+        return Text("asd");
+      }), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
