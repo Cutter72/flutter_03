@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
 
+import '../models/category.dart';
+
 ///
 /// @author Paweł Drelich <drelich_pawel@o2.pl>
 ///
 class CategoryMealsScreen extends StatelessWidget {
-  const CategoryMealsScreen({Key? key}) : super(key: key);
+  final Category category;
+
+  const CategoryMealsScreen({Key? key, required this.category}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       // Scaffold must be the root for screens
       appBar: AppBar(
-        title: const Text("Flutter 03"),
+        title: Text(category.title),
       ),
       body: const Center(
           child: Text(
