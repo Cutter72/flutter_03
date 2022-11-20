@@ -20,6 +20,7 @@ class MealItem extends StatelessWidget {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
         child: Column(children: [
           Stack(
+            // alignment: Alignment.bottomRight, // alignment for all children
             children: [
               ClipRRect(
                 borderRadius: const BorderRadius.only(
@@ -31,6 +32,28 @@ class MealItem extends StatelessWidget {
                   height: 250,
                   width: double.infinity,
                   fit: BoxFit.cover,
+                ),
+              ),
+              Positioned(
+                //alignment for this particular child
+                right: 10,
+                bottom: 5,
+                child: Container(
+                  width: 200,
+                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                  color: Colors.black54,
+                  // constraints: const BoxConstraints(maxWidth: 200, minWidth: 10),
+                  child: Text(
+                    meal.title,
+                    textAlign: TextAlign.start,
+                    softWrap: true,
+                    style: const TextStyle(
+                      color: Colors.white,
+                      // backgroundColor: Colors.black54,
+                      fontSize: 20,
+                      overflow: TextOverflow.fade,
+                    ),
+                  ),
                 ),
               ),
             ],
