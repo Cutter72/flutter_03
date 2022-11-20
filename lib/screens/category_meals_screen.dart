@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_03/models/dummy_data.dart';
+import 'package:flutter_03/widgets/meal_item.dart';
 
 import '../models/category.dart';
 
@@ -24,7 +25,7 @@ class CategoryMealsScreen extends StatelessWidget {
       ),
       body: ListView.builder(
         itemBuilder: (bContext, index) {
-          return Text(categoryMeals[index].title);
+          return MealItem(meal: categoryMeals[index]);
         },
         itemCount: categoryMeals.length,
       ), // This trailing comma makes auto-formatting nicer for build methods.
