@@ -35,6 +35,16 @@ class MyApp extends StatelessWidget {
         CategoryMealsScreen.routeName: (ctx) => CategoryMealsScreen(),
         MealDetailScreen.routeName: (ctx) => MealDetailScreen(),
       },
+      // onGenerateRoute is used if route name is not registered in the above routes: map
+      onGenerateRoute: (routeSettings) {
+        // alternative approach to handle routes, for example if the rout names are generated dynamically
+        if (routeSettings.name == CategoryMealsScreen.routeName) {
+          return MaterialPageRoute(builder: (bContext) => CategoryMealsScreen());
+        } else if (routeSettings.name == MealDetailScreen.routeName) {
+          return MaterialPageRoute(builder: (bContext) => MealDetailScreen());
+        }
+        return MaterialPageRoute(builder: (bContext) => CategoriesScreen());
+      },
     );
   }
 }
