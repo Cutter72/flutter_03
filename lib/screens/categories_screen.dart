@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../models/dummy_data.dart';
 import '../widgets/category_item.dart';
+import '../widgets/main_drawer.dart';
 
 ///
 /// @author Paweł Drelich <drelich_pawel@o2.pl>
@@ -13,6 +14,7 @@ class CategoriesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       // Scaffold must be the root for screens
+      drawer: MainDrawer(),
       appBar: AppBar(
         title: const Text("Categories"),
       ),

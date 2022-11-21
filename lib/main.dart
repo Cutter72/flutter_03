@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_03/screens/categories_screen.dart';
 import 'package:flutter_03/screens/category_meals_screen.dart';
+import 'package:flutter_03/screens/favourites_screen.dart';
 import 'package:flutter_03/screens/meal_detail_screen.dart';
 import 'package:flutter_03/screens/tabs_screen.dart';
 
@@ -35,6 +36,7 @@ class MyApp extends StatelessWidget {
         '/': (ctx) => const TabsScreen(),
         CategoryMealsScreen.routeName: (ctx) => CategoryMealsScreen(),
         MealDetailScreen.routeName: (ctx) => MealDetailScreen(),
+        FavouritesScreen.routeName: (ctx) => FavouritesScreen(),
       },
       // onGenerateRoute is used if route name is not registered in the above routes: map
       onGenerateRoute: (routeSettings) {
@@ -43,6 +45,8 @@ class MyApp extends StatelessWidget {
           return MaterialPageRoute(builder: (bContext) => CategoryMealsScreen());
         } else if (routeSettings.name == MealDetailScreen.routeName) {
           return MaterialPageRoute(builder: (bContext) => MealDetailScreen());
+        } else if (routeSettings.name == FavouritesScreen.routeName) {
+          return MaterialPageRoute(builder: (bContext) => FavouritesScreen());
         }
         return MaterialPageRoute(builder: (bContext) => CategoriesScreen());
       },
