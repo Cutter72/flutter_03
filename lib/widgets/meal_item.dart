@@ -19,7 +19,7 @@ class MealItem extends StatelessWidget {
         margin: const EdgeInsets.all(10),
         elevation: 4,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-        child: Column(children: [
+        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Stack(
             // alignment: Alignment.bottomRight, // alignment for all children
             children: [
@@ -60,11 +60,14 @@ class MealItem extends StatelessWidget {
             ],
           ),
           Padding(
-            padding: const EdgeInsets.all(20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            padding: const EdgeInsets.all(10),
+            child: Wrap(
+              spacing: 10,
+              alignment: WrapAlignment.spaceBetween,
+              direction: Axis.horizontal,
               children: [
                 Row(
+                  mainAxisSize: MainAxisSize.min,
                   children: [
                     const Icon(Icons.schedule),
                     const SizedBox(
@@ -74,6 +77,7 @@ class MealItem extends StatelessWidget {
                   ],
                 ),
                 Row(
+                  mainAxisSize: MainAxisSize.min,
                   children: [
                     const Icon(Icons.work),
                     const SizedBox(
@@ -83,6 +87,7 @@ class MealItem extends StatelessWidget {
                   ],
                 ),
                 Row(
+                  mainAxisSize: MainAxisSize.min,
                   children: [
                     const Icon(Icons.attach_money),
                     Text("${meal.affordability.name}"),
