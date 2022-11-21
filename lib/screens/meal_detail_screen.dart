@@ -1,3 +1,4 @@
+import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 
 import '../models/meal.dart';
@@ -27,13 +28,13 @@ class MealDetailScreen extends StatelessWidget {
           children: [
             Image.network(meal.imageUrl, fit: BoxFit.cover),
             RecipeTitle("Ingredients"),
-            ...meal.ingredients.map((e) {
-              return IngredientsListItem(e);
+            ...meal.ingredients.map((ingredient) {
+              return IngredientsListItem(ingredient);
             }).toList(),
             Divider(color: Colors.black),
             RecipeTitle("Steps"),
-            ...meal.steps.map((e) {
-              return StepsListItem(e);
+            ...meal.steps.mapIndexed((index, step) {
+              return StepsListItem(index, step);
             }).toList(),
           ],
         ),
