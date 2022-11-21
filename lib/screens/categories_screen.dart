@@ -14,7 +14,7 @@ class CategoriesScreen extends StatelessWidget {
     return Scaffold(
       // Scaffold must be the root for screens
       appBar: AppBar(
-        title: const Text("Flutter 03"),
+        title: const Text("Categories"),
       ),
       body: GridView(
         padding: const EdgeInsets.all(16),

@@ -8,8 +8,14 @@ class FavouritesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text("Favourites"),
-    );
+    return Scaffold(
+        // Scaffold must be the root for screens
+        appBar: AppBar(
+          backgroundColor: Colors.red,
+          title: const Text("My favourites"),
+        ),
+        body: Center(
+          child: Text("Favourites"), // This trailing comma makes auto-formatting nicer for build methods.
+        ));
   }
 }
