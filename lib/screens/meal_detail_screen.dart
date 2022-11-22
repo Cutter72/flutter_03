@@ -38,7 +38,18 @@ class MealDetailScreen extends StatelessWidget {
             }).toList(),
           ],
         ),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      ),
+      floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            goBackWithData(context);
+          },
+          child: Icon(Icons.arrow_back)), // This trailing comma makes auto-formatting nicer for build methods.
     );
+  }
+
+  goBackWithData(BuildContext context) {
+    if (Navigator.of(context).canPop()) {
+      Navigator.of(context).pop("[Data from pushed screen after back as a result]");
+    }
   }
 }

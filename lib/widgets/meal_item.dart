@@ -102,6 +102,8 @@ class MealItem extends StatelessWidget {
   }
 
   showRecipe(BuildContext context) {
-    Navigator.of(context).pushNamed(MealDetailScreen.routeName, arguments: meal);
+    Navigator.of(context)
+        .pushNamed(MealDetailScreen.routeName, arguments: meal)
+        .then((value) => print("$value \n THis will be invoked after pushed screen will be poped"));
   }
 }
